@@ -1,0 +1,318 @@
+/* 
+MAIN CSS FILE FOR a1
+Written by: Daniel Viglietti
+Date: August 6th, 2020
+Not all code is original and resources are provided within the file 
+*/
+
+/* This sets the font size, color, and background for the main body of the site */
+body{
+    font-family: Arial, Tahoma, Verdana;
+    font-size: 14px;
+    color: #000000;
+    margin: 0;
+    padding: 0px;
+    background: #F4F7FB
+}
+
+/* This slider initialises the slideshow at the top of the page */
+.slider{
+    max-width: 1440px;
+    height: 500px;
+    background: url(../images/slider-01.jpg);
+    margin: 0px auto;
+    animation: slide 20s infinite;
+}
+
+/* Canvas Form for Site */
+canvas {
+}
+
+/* Keyframes is what animates the photos at the top of the screen */
+@keyframes slide{
+    25%{
+        background: url(../images/slider-02.jpg);
+    }
+    50%{
+        background: url(../images/slider-03.jpg);
+    }
+    75%{
+        background: url(../images/slider-04.jpg);
+    }
+    100%{
+        background: url(../images/slider-01.jpg);
+    }
+}
+
+/* This is for setting a new container on a page to separate content */
+#container
+{
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 80%;
+    background: #F4F7FB;
+    border-bottom: 4px black;
+}
+
+/* LINK STYLING */
+/* Remains the same no matter if the link is active */
+a {
+  color: #3D70B2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* MENU BAR */
+ul {
+  /*float: right;  */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #41D6C3;
+  }
+
+/* style for text */
+li {
+    float: left;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-weight: bold;
+  }
+  
+/* This is what happens when you hover over a menu link */
+li a:hover {
+    background-color: #111;
+    color: #FFF;
+    font-weight: bold;
+  }
+
+li a:active {
+    text-decoration: underline;
+  }
+
+/* COLUMN FOR SERVICES */
+.column 
+{
+    float: left;
+    width: 33%;
+}
+  
+/* Clear floats after the columns
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Button */
+.button {
+  background-color: transparent;
+  font-size: 20px;
+  border-radius: 8px solid #000;
+  color: black;
+}
+
+/* Styling Header Tags */
+h1 {
+  font-size:50px;
+}
+
+h2 {
+  font-size:40px;
+}
+
+h3 {
+  font-size:30px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+#new_font {
+  font-size:16px;
+}
+
+/* Footer Style */
+footer {
+  background-color: #232729;
+  color: white;
+  text-align: right;
+  font-weight: bold;
+  font-size: 12px;
+  padding: .5em;
+}
+
+header {
+  background-color: #232729;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+  font-size: 10px;
+  padding: .5em;
+}
+
+/* Line */
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+  color: black;
+  background-color: black;
+} 
+
+/* Contact Form */
+/* Sourced from w3 Schools and modified by Daniel Viglietti */
+#container2
+{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    float: left;
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 80%;
+    border-bottom: 4px black;
+}
+
+/* Sourced from w3Schools */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical
+}
+
+input[type=submit] {
+  background-color: #41D6C3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #41D6C3;
+}
+
+.calculateButton {
+  background-color: #41D6C3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Services Containers */
+#container3
+{
+  background-image: url('../images/Gym.jpg');
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 0px;
+  width: 1400px;
+  height: 400px;
+  border-bottom: 4px black;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  justify-content: center;
+}
+
+#container4
+{
+  background-image: url('../images/Personal Training.jpg');
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 0px;
+  width: 1400px;
+  height: 450px;
+  border-bottom: 4px black;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  justify-content: center;
+}
+
+#container5
+{
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 80%;
+    background-color: black;
+    border-bottom: 4px black;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    justify-content: center;
+}
+
+.box {
+  display: flex;
+  align-items:right;
+}
+
+/* Join Now Button */
+.joinButton {
+	background-color:transparent;
+	border-radius:28px;
+	border:2px solid #FFF;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:10px 50px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.joinButton:hover {
+	background-color:transparent;
+}
+.joinButton:active {
+	position:relative;
+	top:1px;
+}
+
+ul.b
+{
+  list-style-position: outside;
+  color: black;
+}
+
+li.b {
+  display: list-item;
+}
+
+a.five:link 
+{
+  color:#3D70B2;
+  text-decoration:none;
+}

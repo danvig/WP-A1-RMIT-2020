@@ -1,0 +1,99 @@
+/* 
+REGISTRATION FORM CSS FILE FOR a1
+Written by: Daniel Viglietti
+Date: August 6th, 2020
+Not all code is original and resources are provided within the file 
+*/
+
+/* REGISTRATION FORM */
+.grid-container {
+  grid-column-start: 2;
+  display: grid;
+  margin:0;
+  padding: 0;
+  grid-template-columns: auto;
+  grid-column-gap: 10px;
+  height: 80vh;
+  width: 80vw;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-left: 140px;
+}
+
+textarea {
+  width: 1000px;
+}
+
+/* AGE SLIDER */
+.slidecontainer {
+  width: 80%; /* Width of the outside container */
+  position: relative;
+}
+
+#rangeValue
+{
+    position: absolute;
+    top: 2;
+    left: 600px;
+    padding: 0px;
+    width: 50px;
+    background: transparent;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#rangeValue::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background: black;
+}
+
+.range
+{
+    width: 400px;
+    height: 4px;
+    background: #111;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 1px;
+}
+
+.range::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00bcd4;
+}
+
+/* REGISTER BUTTON */
+.registerButton {
+	background-color:#41d6c2;
+	border-radius:13px;
+	border:1px solid #41d6c2;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:7px 13px;
+	text-decoration:none;
+}
+.registerButton:hover {
+	color: black;
+}
+
+/* DIV for Family Membership
+.familyMembership {
+  display: none;
+} */

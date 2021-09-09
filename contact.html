@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset = "UTF-8">
+    <title>ABC Online Exercise | Contact Us</title>
+    <link rel="stylesheet" href="../a1/css/a1site.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <canvas id="canvas" width="640" height="100">
+            <script type="text/javascript" src ="../a1/js/logo.js"></script>
+        </canvas>
+        <p>  Email: admin@abcgym.com.au   |   Location: Melbourne   |   Phone: +61 491 570 156</p>
+    </header>
+
+    <!-- Menu Bar -->
+    <!-- <div id="container"> --> <!-- This Container DIV is for the Menu Bar -->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="healthdiary.html">Health Diary</a></li>
+      </ul>
+    
+    
+    <!-- Header Slideshow -->
+    <a href="index.html"><div class ="slider">
+
+    </div></a>
+    <!-- </div> This closes the Container for the Slideshow -->
+
+    <div id="container">
+        <center><h1><strong>Contact Us</h1></strong>
+            <p id = "new_font">Want to get in touch? We'd love to hear from you. Here's how you can reach us...</p>
+            <hr>
+            <h3 style="text-align:left;">Phone Hours <span style="float:right;"> Contact Details </span></h3>
+            <p style="text-align:left;">Monday: 9AM - 5:30 PM (AEST) <span style="float:right;"> <strong>Address: </strong>15 Palm Way, Narre Warren South, VIC 3805</span><br><br>
+                Tuesday: 9AM - 5:30 PM (AEST) <span style="float:right;"> <strong>Email: </strong><a href="mailto:admin@abcgym.com.au">admin@abcgym.com.au</a></span> <br><br>
+                Wednesday: 9AM - 5:30 PM (AEST) <span style="float:right;"> <strong>Landline: </strong>1900 654 321</span> <br><br>
+                Thursday: 9AM - 5:30 PM (AEST) <span style="float:right;"> <strong>Mobile: </strong>0491 570 110</span> <br><br>
+                Friday: 9AM - 5:30 PM (AEST) <br><br>
+                Saturday: After hours voice mail box <br><br>
+                Sunday: After hours voice mail box
+                <br><br> * Please note that our operating hours are currently <br> not in effect due to the COVID-19 Pandemic on advice from the <br> Victorian Government.
+            </p>
+    </div>
+            <!-- Contact Form -->
+            <br>
+            <div id="container">
+            <h3 style="text-align:left;">Contact Form</h3>
+            <form action="mailto:admin@abcgym.com.au" method="post" enctype="text/plain">
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+            
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email.." required>
+
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="optional" required>
+                <label id="phoneError"></label>
+
+                <script>
+                    function phonenumber(inputtxt)
+                    {
+                        var phoneno = /^\d{10}$/;
+
+                        if (document.getElementById("phone").value.match(phoneno))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                            document.getElementById("phoneError").innerHTML = "Enter a correct phone number";
+                        }
+                    }
+                </script>
+            
+                <label for="enquiry">Enquiry Type</label>
+                <select id="enquiry" name="enquiry" required>
+                  <option value="general">General Enquiry</option>
+                  <option value="membership">New Membership</option>
+                  <option value="security">Security Concern</option>
+                  <option value="online">COVID Online Training</option>
+                </select>
+            
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+            
+                <input type="submit" value="Submit">
+            
+              </form>
+    </div><br>
+
+    <!-- Footer -->
+    <div style="clear: both"></div>
+    <footer>
+        <p style="float: left;">Privacy  |  Sitemap</p>
+        <br>
+        <p>Copyright © 2020 Daniel Viglietti - All Rights Reserved</p>
+        <p>Email: <a href="mailto:s3844180@student.rmit.edu.au">s3844180@student.rmit.edu.au</a></p>
+        <p>Stock Images sourced for free use from <a href="http://www.unsplash.com">Unsplash.com</a></p>
+        <br>
+    </footer>
+
+</body>
+
+</html>

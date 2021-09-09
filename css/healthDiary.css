@@ -1,0 +1,28 @@
+/* 
+HEALTH DIARY CSS FILE FOR a1
+Written by: Daniel Viglietti
+Date: August 23rd, 2020
+Not all code is original and resources are provided within the file 
+*/
+
+/* Code for Error Labels */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-left: 140px;
+}
+
+/* Heartbeat Timer */
+/* Import Robot Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+.countdown
+{
+    font-family: 'Orbitron';
+    font-size:25px;
+}
+
+.heartbeatCountdown
+{
+    border:1px solid black;
+}

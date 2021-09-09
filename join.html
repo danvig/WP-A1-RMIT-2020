@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset = "UTF-8">
+    <title>ABC Online Exercise | Join Now</title>
+    <link rel="stylesheet" href="../a1/css/a1site.css">
+    
+    <link rel="stylesheet" href="../a1/css/regForm.css">
+
+</head>
+
+<body onload = "membershipCalculation()">
+    <!-- Header -->
+    <header>
+        <canvas id="canvas" width="640" height="100">
+            <script type="text/javascript" src ="../a1/js/logo.js"></script>
+        </canvas>
+        <p>  Email: admin@abcgym.com.au   |   Location: Melbourne   |   Phone: +61 491 570 156</p>
+    </header>
+
+    <!-- Menu Bar -->
+    <!-- <div id="container"> --> <!-- This Container DIV is for the Menu Bar -->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="healthdiary.html">Health Diary</a></li>
+      </ul>
+    
+    
+    <!-- Header Slideshow -->
+    <a href="index.html"><div class ="slider">
+
+    </div></a>
+    <!-- </div> This closes the Container for the Slideshow -->
+
+    <div id="container">
+        <center><br><img src=../a1/images/Dumbbell-Icon.png width="300" height="300"></center>
+        <center><h1><strong>Join Adrenaline Buzz Club</h1></strong>
+            <p id = "new_font">Ready to join the Adrenaline Buzz Club? Use this page to secure your membership.</p>
+            <hr>
+    </div>
+    
+    <!-- Register Form -->
+    <div id="container">
+        <script type="text/javascript" src ="../a1/js/formvalid.js"></script>
+    <div id="grid-container">
+        <h3>Enter your Details Below</h3>
+        <form id="registration_form" action="submission.html#grid-container" onsubmit="return validateForm()">
+            <!-- Name/Email Input -->
+            <div><label for="firstname">First Name: </label><input type="text" name = "firstname" id="firstname" onchange="membershipCalculation();"></div>
+            <div class="error" id="firstnameError"></div><br>
+    
+            <div><label for="lastname">Last Name: </label><input type="text" name = "lastname" id="lastname"></div>
+            <div class="error" id="lastnameError"></div><br>
+    
+            <div><label for="email">Email: </label><input type="text" name = "email" id="email"></div>
+            <div class="error" id="emailError"></div>
+
+            <!-- Text Area Font sourced from w3 schools -->
+            <!-- https://www.w3schools.com/tags/tag_textarea.asp -->
+            <div><label for="address">Address:</label></div>
+            <textarea id="w3review" name="w3review" rows="4" name ="address" cols="100">Address (optional)</textarea>
+            
+            <!-- Membership Type Dropdown -->
+            <div><label for="membershipop">Membership Type: </label>
+            <select id="membershipop" name="membershipop" onchange="membershipChoice(this); membershipCalculation();">
+                <option value="individual">Individual</option>
+                <option value="family">Family</option>
+            </select>
+            </div>
+            <div class="error" id="customerError"></div>
+            
+            <!-- Membership Duration -->
+            <div><label for="membershipduration">Membership Duration: </label>
+            <select id="membershipduration" name="membershipduration" onchange="membershipCalculation();">
+                <option value="ongoing">Ongoing</option>
+                <option value="3mths">3 Months</option>
+                <option value="6mths">6 Months</option>
+                <option value="yearly">Yearly</option>
+            </select>
+            </div>
+            <div class="error" id="durationError"></div>
+
+            <!-- Age Range Slider -->
+            <!-- Code Sourced from w3schools and adapted by Daniel Viglietti -->
+            <!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
+            <br><div id="rangeDIV">
+                <label><strong>Age: </strong> </label>
+                <span id="rangeValue">16</span>
+                <input type="range" class="range" name ="age" id="age"
+                value = "16"
+                onmousemove="rangeSlider(this.value)"
+                onchange="rangeSlider(this.value); membershipCalculation();">
+            </div>
+            <div class="error" id="ageError"></div>
+            <script type="text/javascript">
+                function rangeSlider(value) 
+                {
+                document.getElementById('rangeValue').innerHTML = value;
+
+                if (document.getElementById('rangeValue').innerHTML < 16 || document.getElementById('rangeValue').innerHTML > 90)
+                {
+                    document.getElementById('ageError').innerHTML = "Required: Members must be aged between 16 and 90";
+                }
+                else
+                {
+                    document.getElementById('ageError').innerHTML = "";
+                }
+
+                }
+            </script>
+
+            <!-- Referral Checkbox -->
+            <br><br><div id="slidecontainer">
+                <label for="referral"><b>Were you referred by a gym member?</b></label>
+                <input type="checkbox" id="referralyes" name="referralyes" value="Yes" onchange="membershipCalculation();">Yes
+                <input type="checkbox" id="referralno" name="referralno" value="No" onchange="membershipCalculation();">No
+            </div>
+            <div class="error" id="referralError"></div>
+
+            <!-- FAMILY MEMBERSHIP -->
+            <div id="familymembership" name = "familymembership" style="display: none";>
+                <hr>
+                <h4>Family Membership Options</h4>
+                    <!-- Choosing Number of Family Members-->
+                    <div>
+                    <label for="numMembers">Number of Family Members: </label>
+                    <select id="numMembers" name="numMembers" onchange="ageChange(this); membershipCalculation();">
+                        <option value="Two">2</option>
+                        <option value="Three">3</option>
+                        <option value="Four">4</option>
+                        <option value="Five">5</option>
+                    </select>
+                    </div>
+
+                    <!-- Age Sliders -->
+                    <!-- Age 1 -->
+                    <div id="rangeDIV">
+                        <label><strong>Family Member 1 Age: </strong> </label>
+                        <span id="age1Value">16</span>
+                        <input type="range" class="range" name ="age1Value" id="age1Value"
+                        value = "16"
+                        onmousemove="age1Slider(this.value)"
+                        onchange="age1Slider(this.value); membershipCalculation();">
+                    </div>
+                    <div class="error" id="age1Error"></div>
+                    <script type="text/javascript">
+                    function age1Slider(value) 
+                    {
+                        document.getElementById('age1Value').innerHTML = value;
+
+                        if (document.getElementById('age1Value').innerHTML < 16 || document.getElementById('age1Value').innerHTML > 90)
+                        {
+                            document.getElementById('age1Error').innerHTML = "Required: Members must be aged between 16 and 90";
+                        }
+                        else
+                        {
+                            document.getElementById('age1Error').innerHTML = "";
+                        }
+                    }
+                    </script>
+
+                    <!-- Age 2 -->
+                    <br><div id="rangeDIV">
+                        <label><strong>Family Member 2 Age: </strong> </label>
+                        <span id="age2Value">16</span>
+                        <input type="range" class="range" name ="age2Value" id="age2Value"
+                        value = "16"
+                        onmousemove="age2Slider(this.value)"
+                        onchange="age2Slider(this.value); membershipCalculation();">
+                    </div>
+                    <div class="error" id="age2Error"></div>
+                    <script type="text/javascript">
+                    function age2Slider(value) 
+                    {
+                        document.getElementById('age2Value').innerHTML = value;
+
+                        if (document.getElementById('age2Value').innerHTML < 16 || document.getElementById('age2Value').innerHTML > 90)
+                        {
+                            document.getElementById('age2Error').innerHTML = "Required: Members must be aged between 16 and 90";
+                        }
+                        else
+                        {
+                            document.getElementById('age2Error').innerHTML = "";
+                        }
+                    }
+                    </script>
+
+                    <!-- Age 3 -->
+                    <div id = "age3" style="display: none";>
+                    <br><div id="rangeDIV">
+                        <label><strong>Family Member 3 Age: </strong> </label>
+                        <span id="age3Value">16</span>
+                        <input type="range" class="range" name ="age3Value" id="age3Value"
+                        value = "16"
+                        onmousemove="age3Slider(this.value)"
+                        onchange="age3Slider(this.value); membershipCalculation();">
+                    </div>
+                    <div class="error" id="age3Error"></div>
+                    </div>
+                    <script type="text/javascript">
+                    function age3Slider(value) 
+                    {
+                        document.getElementById('age3Value').innerHTML = value;
+
+                        if (document.getElementById('age3Value').innerHTML < 16 || document.getElementById('age3Value').innerHTML > 90)
+                        {
+                            document.getElementById('age3Error').innerHTML = "Required: Members must be aged between 16 and 90";
+                        }
+                        else
+                        {
+                            document.getElementById('age3Error').innerHTML = "";
+                        }
+                    }
+                    </script>
+
+                    <!-- Age 4 -->
+                    <div id = "age4" style="display: none";>
+                    <br><div id="rangeDIV">
+                        <label><strong>Family Member 4 Age: </strong> </label>
+                        <span id="age4Value">16</span>
+                        <input type="range" class="range" name ="age4Value" id="age4Value"
+                        value = "16"
+                        onmousemove="age4Slider(this.value)"
+                        onchange="age4Slider(this.value); membershipCalculation();">
+                    </div>
+                    <div class="error" id="age4Error"></div>
+                    </div>
+                    <script type="text/javascript">
+                    function age4Slider(value) 
+                    {
+                        document.getElementById('age4Value').innerHTML = value;
+
+                        if (document.getElementById('age4Value').innerHTML < 16 || document.getElementById('age4Value').innerHTML > 90)
+                        {
+                            document.getElementById('age4Error').innerHTML = "Required: Members must be aged between 16 and 90";
+                        }
+                        else
+                        {
+                            document.getElementById('age4Error').innerHTML = "";
+                        }
+                    }
+                    </script>
+
+                    <!-- Age 5 -->
+                    <div id = "age5" style="display: none";>
+                    <br><div id="rangeDIV">
+                        <label><strong>Family Member 5 Age: </strong> </label>
+                        <span id="age5Value">16</span>
+                        <input type="range" class="range" name ="age5Value" id="age5Value"
+                        value = "16"
+                        onmousemove="age5Slider(this.value)"
+                        onchange="age5Slider(this.value); membershipCalculation();">
+                    </div>
+                    <div class="error" id="age5Error"></div>
+                    </div>
+                    <script type="text/javascript">
+                    function age5Slider(value) 
+                    {
+                        document.getElementById('age5Value').innerHTML = value;
+
+                        if (document.getElementById('age5Value').innerHTML < 16 || document.getElementById('age5Value').innerHTML > 90)
+                        {
+                            document.getElementById('age5Error').innerHTML = "Required: Members must be aged between 16 and 90";
+                        }
+                        else
+                        {
+                            document.getElementById('age5Error').innerHTML = "";
+                        }
+                    }
+                    </script>
+
+            </div>
+            <br><hr>
+            <h4 id="membershipCost">Total Membership Cost:</h4>
+
+            <br>
+            <div><input type="submit" value="Register"/></div>
+            <br>
+        </form>
+            <!--<div><button class="calculateButton" onclick="membershipCalculation()">View Membership Cost</button></div>
+            <br> -->
+    </div>
+</div>
+
+    <!-- Footer -->
+    <div style="clear: both"></div>
+    <footer>
+        <p style="float: left;">Privacy  |  Sitemap</p>
+        <br>
+        <p>Copyright © 2020 Daniel Viglietti - All Rights Reserved</p>
+        <p>Email: <a href="mailto:s3844180@student.rmit.edu.au">s3844180@student.rmit.edu.au</a></p>
+        <p>Stock Images sourced for free use from <a href="http://www.unsplash.com">Unsplash.com</a></p>
+        <br>
+    </footer>
+
+</body>
+
+</html>
